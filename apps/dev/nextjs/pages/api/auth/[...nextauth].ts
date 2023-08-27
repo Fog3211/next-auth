@@ -39,6 +39,7 @@ import Yandex from "@auth/core/providers/yandex"
 import Vk from "@auth/core/providers/vk"
 import Wikimedia from "@auth/core/providers/wikimedia"
 import WorkOS from "@auth/core/providers/workos"
+import Wechat from "@auth/core/providers/wechat"
 
 // // Prisma
 // import { PrismaClient } from "@prisma/client"
@@ -88,7 +89,7 @@ export const authConfig: AuthConfig = {
     }),
     Apple({ clientId: process.env.APPLE_ID, clientSecret: process.env.APPLE_SECRET as string }),
     // Asgardeo({ clientId: process.env.ASGARDEO_CLIENT_ID, clientSecret: process.env.ASGARDEO_CLIENT_SECRET, issuer: process.env.ASGARDEO_ISSUER }),
-    Auth0({ clientId: process.env.AUTH0_ID, clientSecret: process.env.AUTH0_SECRET, issuer: process.env.AUTH0_ISSUER }),
+    // Auth0({ clientId: process.env.AUTH0_ID, clientSecret: process.env.AUTH0_SECRET, issuer: process.env.AUTH0_ISSUER }),
     AzureAD({
       clientId: process.env.AZURE_AD_CLIENT_ID,
       clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
@@ -131,6 +132,7 @@ export const authConfig: AuthConfig = {
     Vk({ clientId: process.env.VK_ID, clientSecret: process.env.VK_SECRET }),
     Wikimedia({ clientId: process.env.WIKIMEDIA_ID, clientSecret: process.env.WIKIMEDIA_SECRET }),
     WorkOS({ clientId: process.env.WORKOS_ID, clientSecret: process.env.WORKOS_SECRET }),
+    Wechat({ clientId: process.env.WECHAT_ID, clientSecret: process.env.WECHAT_SECRET, redirectUri: process.env.WECHAT_REDIRECT_URI as string }),
   ],
   // debug: process.env.NODE_ENV !== "production",
 }
